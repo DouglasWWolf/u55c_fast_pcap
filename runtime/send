@@ -1,0 +1,11 @@
+source api
+
+size=$1
+count=$2
+test -z $count && count=1 
+test -z $size && size=64
+test $size -lt 64 && size=64
+axi REG_SEND_COUNT $count 
+axi REG_SEND_SIZE $size
+axi REG_SEND 1
+

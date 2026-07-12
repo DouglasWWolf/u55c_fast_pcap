@@ -1,0 +1,74 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"0.982846",
+   "Default View_TopLeft":"-133,-194",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port axis_in -pg 1 -lvl 0 -x -120 -y 80 -defaultsOSRD
+preplace port M_AXI -pg 1 -lvl 5 -x 1340 -y 80 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x -120 -y 180 -defaultsOSRD
+preplace port port-id_cmac_clk -pg 1 -lvl 0 -x -120 -y 200 -defaultsOSRD
+preplace port port-id_cmac_resetn -pg 1 -lvl 0 -x -120 -y 120 -defaultsOSRD
+preplace port port-id_done -pg 1 -lvl 5 -x 1340 -y 100 -defaultsOSRD
+preplace portBus enable -pg 1 -lvl 0 -x -120 -y 220 -defaultsOSRD
+preplace portBus packets_captured -pg 1 -lvl 5 -x 1340 -y 20 -defaultsOSRD
+preplace portBus blocks_captured -pg 1 -lvl 5 -x 1340 -y 120 -defaultsOSRD
+preplace inst enable_sync -pg 1 -lvl 1 -x 140 -y 270 -defaultsOSRD -pinDir src_clk left -pinY src_clk 20L -pinDir dest_clk left -pinY dest_clk 40L -pinBusDir src_in left -pinBusY src_in 60L -pinBusDir dest_out right -pinBusY dest_out 20R
+preplace inst add_header -pg 1 -lvl 3 -x 840 -y 60 -defaultsOSRD -pinDir axis_md left -pinY axis_md 20L -pinDir axis_out right -pinY axis_out 20R -pinDir axis_pd left -pinY axis_pd 40L -pinDir clk left -pinY clk 60L -pinDir resetn left -pinY resetn 80L -pinDir enable left -pinY enable 100L -pinBusDir packets_captured right -pinBusY packets_captured 40R
+preplace inst packet_gate -pg 1 -lvl 2 -x 490 -y 60 -defaultsOSRD -pinDir axis_hdr right -pinY axis_hdr 20R -pinDir axis_in left -pinY axis_in 20L -pinDir axis_out right -pinY axis_out 40R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 60L -pinDir enable left -pinY enable 80L
+preplace inst hbm_writer -pg 1 -lvl 4 -x 1170 -y 60 -defaultsOSRD -pinDir axis_in left -pinY axis_in 20L -pinDir M_AXI right -pinY M_AXI 20R -pinDir clk left -pinY clk 40L -pinDir resetn left -pinY resetn 160L -pinDir enable left -pinY enable 180L -pinDir done right -pinY done 40R -pinBusDir blocks_rcvd right -pinBusY blocks_rcvd 60R
+preplace inst system_ila_0 -pg 1 -lvl 1 -x 140 -y -20 -swap {0 1 2 3 4 5 12 7 8 9 10 11 6 13 14 15 16 18 17} -defaultsOSRD -pinDir SLOT_0_AXIS left -pinY SLOT_0_AXIS 20L -pinDir SLOT_1_AXIS left -pinY SLOT_1_AXIS 60L -pinDir SLOT_2_AXIS left -pinY SLOT_2_AXIS 40L -pinDir clk left -pinY clk 100L -pinDir resetn left -pinY resetn 80L
+preplace netloc add_header_blocks_captured 1 4 1 NJ 120
+preplace netloc add_header_packets_captured 1 3 2 1020J 20 NJ
+preplace netloc cmac_clk_1 1 0 4 -20 200 260 20 680 20 1000
+preplace netloc enable_1 1 0 1 -100J 220n
+preplace netloc enable_sync_dest_out 1 1 3 360 260 680 240 NJ
+preplace netloc hbm_0_cmac_resetn 1 0 4 -60J 220 300 240 660 220 NJ
+preplace netloc hbm_writer_done 1 4 1 NJ 100
+preplace netloc sys_clk_1 1 0 1 -80J 180n
+preplace netloc S00_AXI_1 1 4 1 NJ 80
+preplace netloc add_header_axis_out 1 3 1 N 80
+preplace netloc axis_in_1 1 0 2 -40J 180 280J
+preplace netloc packet_gate_axis_hdr 1 0 3 20 140 340 200 640
+preplace netloc packet_gate_axis_out 1 0 3 0 160 320 220 620
+levelinfo -pg 1 -120 140 490 840 1170 1340
+pagesize -pg 1 -db -bbox -sgen -250 -50 1550 380
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-227,-299",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port axis_in -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port M_AXI -pg 1 -lvl 5 -x 1200 -y 130 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port port-id_cmac_clk -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace port port-id_resetn -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_done -pg 1 -lvl 5 -x 1200 -y 150 -defaultsOSRD
+preplace portBus enable -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace portBus packets_captured -pg 1 -lvl 5 -x 1200 -y 240 -defaultsOSRD
+preplace portBus blocks_captured -pg 1 -lvl 5 -x 1200 -y 170 -defaultsOSRD
+preplace inst enable_sync -pg 1 -lvl 1 -x 140 -y 180 -defaultsOSRD
+preplace inst add_header -pg 1 -lvl 3 -x 700 -y 130 -defaultsOSRD
+preplace inst packet_gate -pg 1 -lvl 2 -x 400 -y 100 -defaultsOSRD
+preplace inst hbm_writer -pg 1 -lvl 4 -x 1030 -y 150 -defaultsOSRD
+preplace netloc enable_sync_dest_out 1 1 3 270 200 540 240 860J
+preplace netloc sys_clk_1 1 0 1 NJ 160
+preplace netloc cmac_clk_1 1 0 4 20 90 260 10 530 30 880
+preplace netloc enable_1 1 0 1 NJ 200
+preplace netloc hbm_0_cmac_resetn 1 0 4 NJ 100 260 190 530 230 880J
+preplace netloc add_header_packets_captured 1 3 2 870J 240 NJ
+preplace netloc hbm_writer_done 1 4 1 NJ 150
+preplace netloc add_header_blocks_captured 1 4 1 NJ 170
+preplace netloc packet_gate_axis_hdr 1 2 1 N 90
+preplace netloc add_header_axis_out 1 3 1 N 120
+preplace netloc packet_gate_axis_out 1 2 1 N 110
+preplace netloc axis_in_1 1 0 2 NJ 70 NJ
+preplace netloc S00_AXI_1 1 4 1 NJ 130
+levelinfo -pg 1 0 140 400 700 1030 1200
+pagesize -pg 1 -db -bbox -sgen -130 0 1410 260
+"
+}
+0

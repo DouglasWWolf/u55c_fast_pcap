@@ -1,0 +1,65 @@
+{
+   "ActiveEmotionalView":"No Loops",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-371,-186",
+   "DisplayTieOff":"1",
+   "ExpandedHierarchyInLayout":"",
+   "No Loops_ExpandedHierarchyInLayout":"",
+   "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port PCI_AXI -pg 1 -lvl 3 -x 700 -y 60 -defaultsOSRD
+preplace port HBM_AXI -pg 1 -lvl 3 -x 700 -y 80 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
+preplace port port-id_sys_resetn -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port port-id_start_copy_stb -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
+preplace port port-id_copy_idle -pg 1 -lvl 3 -x 700 -y 100 -defaultsOSRD
+preplace portBus host_addr -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace portBus block_count -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD
+preplace inst data_mover -pg 1 -lvl 2 -x 530 -y 40 -defaultsOSRD -pinDir DST_AXI right -pinY DST_AXI 20R -pinDir SRC_AXI right -pinY SRC_AXI 40R -pinDir clk left -pinY clk 20L -pinDir resetn left -pinY resetn 40L -pinBusDir src_address left -pinBusY src_address 100L -pinBusDir dst_address left -pinBusY dst_address 120L -pinBusDir byte_count left -pinBusY byte_count 140L -pinBusDir burst_size left -pinBusY burst_size 160L -pinDir start left -pinY start 220L -pinDir idle right -pinY idle 60R
+preplace inst copy_to_host -pg 1 -lvl 1 -x 200 -y 120 -defaultsOSRD -pinDir clk left -pinY clk 20L -pinBusDir host_addr left -pinBusY host_addr 40L -pinBusDir block_count left -pinBusY block_count 60L -pinBusDir src_address right -pinBusY src_address 20R -pinBusDir dst_address right -pinBusY dst_address 40R -pinBusDir byte_count right -pinBusY byte_count 60R -pinBusDir burst_size right -pinBusY burst_size 80R
+preplace netloc copy_to_host_src_address 1 1 1 N 140
+preplace netloc copy_to_host_dst_address 1 1 1 N 160
+preplace netloc copy_to_host_byte_count 1 1 1 N 180
+preplace netloc copy_to_host_burst_size 1 1 1 N 200
+preplace netloc sys_clk_1 1 0 2 20 60 NJ
+preplace netloc control_resetn_out 1 0 2 NJ 80 NJ
+preplace netloc start_copy_stb_1 1 0 2 NJ 260 NJ
+preplace netloc data_mover_0_idle 1 2 1 NJ 100
+preplace netloc host_addr_1 1 0 1 NJ 160
+preplace netloc block_count_1 1 0 1 NJ 180
+preplace netloc data_mover_0_DST_AXI 1 2 1 NJ 60
+preplace netloc data_mover_0_SRC_AXI 1 2 1 NJ 80
+levelinfo -pg 1 0 200 530 700
+pagesize -pg 1 -db -bbox -sgen -180 0 820 320
+",
+   "No Loops_ScaleFactor":"1.0",
+   "No Loops_TopLeft":"-373,-144",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port PCI_AXI -pg 1 -lvl 3 -x 690 -y 90 -defaultsOSRD
+preplace port HBM_AXI -pg 1 -lvl 3 -x 690 -y 110 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 40 -defaultsOSRD
+preplace port port-id_sys_resetn -pg 1 -lvl 0 -x 0 -y 20 -defaultsOSRD
+preplace port port-id_start_copy_stb -pg 1 -lvl 0 -x 0 -y 210 -defaultsOSRD
+preplace port port-id_copy_idle -pg 1 -lvl 3 -x 690 -y 130 -defaultsOSRD
+preplace portBus host_addr -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace portBus block_count -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace inst data_mover -pg 1 -lvl 2 -x 520 -y 110 -defaultsOSRD
+preplace inst copy_to_host -pg 1 -lvl 1 -x 190 -y 120 -defaultsOSRD
+preplace netloc copy_to_host_src_address 1 1 1 N 90
+preplace netloc copy_to_host_dst_address 1 1 1 N 110
+preplace netloc copy_to_host_byte_count 1 1 1 N 130
+preplace netloc copy_to_host_burst_size 1 1 1 N 150
+preplace netloc sys_clk_1 1 0 2 20 30 360J
+preplace netloc control_resetn_out 1 0 2 NJ 20 370J
+preplace netloc start_copy_stb_1 1 0 2 NJ 210 360J
+preplace netloc data_mover_0_idle 1 2 1 NJ 130
+preplace netloc host_addr_1 1 0 1 NJ 120
+preplace netloc block_count_1 1 0 1 NJ 140
+preplace netloc data_mover_0_DST_AXI 1 2 1 NJ 90
+preplace netloc data_mover_0_SRC_AXI 1 2 1 NJ 110
+levelinfo -pg 1 0 190 520 690
+pagesize -pg 1 -db -bbox -sgen -180 0 810 230
+"
+}
+

@@ -1,0 +1,6 @@
+source api
+state=$1 
+test "$state" == "on"  && state=1  
+test "$state" == "off" && state=0
+axi REG_ENABLE $state
+

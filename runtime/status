@@ -1,0 +1,5 @@
+source api
+echo "REG_CAP_COMPLETE = $(get REG_CAP_COMPLETE)"
+echo "REG_COPY_TO_HOST = $(get REG_COPY_TO_HOST)"
+echo "REG_PACKET_COUNT = $(get REG_PACKET_COUNT)"
+echo "REG_BLOCK_COUNT  = $(get REG_BLOCK_COUNT)"
