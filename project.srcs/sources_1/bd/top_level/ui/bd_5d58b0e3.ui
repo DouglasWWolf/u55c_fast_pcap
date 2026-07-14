@@ -7,49 +7,49 @@
    "No Loops_ExpandedHierarchyInLayout":"",
    "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
-preplace port axis_in -pg 1 -lvl 0 -x -10 -y 70 -defaultsOSRD
-preplace port hbm_refclk -pg 1 -lvl 3 -x 1040 -y 170 -defaultsOSRD -right
-preplace port PCI_AXI -pg 1 -lvl 0 -x -10 -y 320 -defaultsOSRD -left
-preplace port port-id_cmac_clk -pg 1 -lvl 0 -x -10 -y 90 -defaultsOSRD
-preplace port port-id_sys_resetn -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
-preplace port port-id_done -pg 1 -lvl 0 -x -10 -y 150 -defaultsOSRD -left
-preplace port port-id_hbm_cattrip -pg 1 -lvl 3 -x 1040 -y 210 -defaultsOSRD
-preplace port port-id_sys_clk -pg 1 -lvl 0 -x -10 -y 170 -defaultsOSRD
-preplace port port-id_start_copy_stb -pg 1 -lvl 0 -x -10 -y 380 -defaultsOSRD
-preplace port port-id_copy_idle -pg 1 -lvl 0 -x -10 -y 400 -defaultsOSRD -left
-preplace portBus enable -pg 1 -lvl 0 -x -10 -y 130 -defaultsOSRD
-preplace portBus packets_captured -pg 1 -lvl 0 -x -10 -y 110 -defaultsOSRD -left
-preplace portBus blocks_captured -pg 1 -lvl 0 -x -10 -y 190 -defaultsOSRD -left
-preplace portBus hbm_temp -pg 1 -lvl 3 -x 1040 -y 190 -defaultsOSRD
-preplace portBus host_addr -pg 1 -lvl 0 -x -10 -y 420 -defaultsOSRD
-preplace portBus block_count -pg 1 -lvl 0 -x -10 -y 440 -defaultsOSRD
-preplace inst hbm_1 -pg 1 -lvl 2 -x 880 -y 150 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 81 82 80} -defaultsOSRD -pinDir hbm_refclk right -pinY hbm_refclk 20R -pinDir S00_AXI left -pinY S00_AXI 20L -pinDir S01_AXI left -pinY S01_AXI 170L -pinBusDir hbm_temp right -pinBusY hbm_temp 40R -pinDir hbm_cattrip right -pinY hbm_cattrip 60R -pinDir cmac_clk left -pinY cmac_clk 190L -pinDir sys_clk left -pinY sys_clk 230L -pinDir sys_resetn left -pinY sys_resetn 250L -pinDir cmac_resetn left -pinY cmac_resetn 210L
-preplace inst copy_to_host -pg 1 -lvl 1 -x 520 -y 540 -defaultsOSRD -pinDir PCI_AXI left -pinY PCI_AXI 20L -pinDir HBM_AXI right -pinY HBM_AXI 20R -pinDir sys_clk left -pinY sys_clk 40L -pinDir sys_resetn left -pinY sys_resetn 60L -pinDir start_copy_stb left -pinY start_copy_stb 80L -pinDir copy_idle left -pinY copy_idle 100L -pinBusDir host_addr left -pinBusY host_addr 120L -pinBusDir block_count left -pinBusY block_count 140L
-preplace inst packet_datapath -pg 1 -lvl 1 -x 520 -y 50 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 48 43 45 46 44 47 49} -defaultsOSRD -pinDir axis_in left -pinY axis_in 20L -pinDir M_AXI right -pinY M_AXI 120R -pinDir sys_clk left -pinY sys_clk 120L -pinDir cmac_clk left -pinY cmac_clk 40L -pinBusDir enable left -pinBusY enable 80L -pinDir cmac_resetn right -pinY cmac_resetn 140R -pinBusDir packets_captured left -pinBusY packets_captured 60L -pinDir done left -pinY done 100L -pinBusDir blocks_captured left -pinBusY blocks_captured 140L
+preplace port axis_in -pg 1 -lvl 0 -x 0 -y 70 -defaultsOSRD
+preplace port hbm_refclk -pg 1 -lvl 3 -x 720 -y 170 -defaultsOSRD -right
+preplace port PCI_AXI -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD -left
+preplace port port-id_cmac_clk -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
+preplace port port-id_sys_resetn -pg 1 -lvl 0 -x 0 -y 340 -defaultsOSRD
+preplace port port-id_done -pg 1 -lvl 0 -x 0 -y 150 -defaultsOSRD -left
+preplace port port-id_hbm_cattrip -pg 1 -lvl 3 -x 720 -y 210 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 170 -defaultsOSRD
+preplace port port-id_start_copy_stb -pg 1 -lvl 0 -x 0 -y 380 -defaultsOSRD
+preplace port port-id_copy_idle -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD -left
+preplace portBus enable -pg 1 -lvl 0 -x 0 -y 130 -defaultsOSRD
+preplace portBus packets_captured -pg 1 -lvl 0 -x 0 -y 110 -defaultsOSRD -left
+preplace portBus blocks_captured -pg 1 -lvl 0 -x 0 -y 190 -defaultsOSRD -left
+preplace portBus hbm_temp -pg 1 -lvl 3 -x 720 -y 190 -defaultsOSRD
+preplace portBus host_addr -pg 1 -lvl 0 -x 0 -y 420 -defaultsOSRD
+preplace portBus block_count -pg 1 -lvl 0 -x 0 -y 440 -defaultsOSRD
+preplace inst hbm_1 -pg 1 -lvl 2 -x 560 -y 150 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 83 84 82} -defaultsOSRD -pinDir hbm_refclk right -pinY hbm_refclk 20R -pinDir S00_AXI left -pinY S00_AXI 20L -pinDir S01_AXI left -pinY S01_AXI 170L -pinBusDir hbm_temp right -pinBusY hbm_temp 40R -pinDir hbm_cattrip right -pinY hbm_cattrip 60R -pinDir cmac_clk left -pinY cmac_clk 190L -pinDir sys_clk left -pinY sys_clk 230L -pinDir sys_resetn left -pinY sys_resetn 250L -pinDir cmac_resetn left -pinY cmac_resetn 210L
+preplace inst copy_to_host -pg 1 -lvl 1 -x 200 -y 300 -defaultsOSRD -pinDir PCI_AXI left -pinY PCI_AXI 20L -pinDir HBM_AXI right -pinY HBM_AXI 20R -pinDir sys_clk left -pinY sys_clk 40L -pinDir sys_resetn left -pinY sys_resetn 60L -pinDir start_copy_stb left -pinY start_copy_stb 80L -pinDir copy_idle left -pinY copy_idle 100L -pinBusDir host_addr left -pinBusY host_addr 120L -pinBusDir block_count left -pinBusY block_count 140L
+preplace inst packet_datapath -pg 1 -lvl 1 -x 200 -y 50 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 48 43 45 46 44 47 49} -defaultsOSRD -pinDir axis_in left -pinY axis_in 20L -pinDir M_AXI right -pinY M_AXI 120R -pinDir sys_clk left -pinY sys_clk 120L -pinDir cmac_clk left -pinY cmac_clk 40L -pinBusDir enable left -pinBusY enable 80L -pinDir cmac_resetn right -pinY cmac_resetn 140R -pinBusDir packets_captured left -pinBusY packets_captured 60L -pinDir done left -pinY done 100L -pinBusDir blocks_captured left -pinBusY blocks_captured 140L
 preplace netloc add_header_blocks_captured 1 0 1 NJ 190
 preplace netloc add_header_packets_captured 1 0 1 NJ 110
-preplace netloc cmac_clk_1 1 0 2 360 10 720
-preplace netloc control_resetn_out 1 0 2 320 500 720J
+preplace netloc block_count_1 1 0 1 NJ 440
+preplace netloc cmac_clk_1 1 0 2 40 10 420
+preplace netloc control_resetn_out 1 0 2 20 260 360J
+preplace netloc copy_to_host_copy_idle 1 0 1 NJ 400
 preplace netloc enable_1 1 0 1 NJ 130
 preplace netloc hbm_1_hbm_cattrip 1 2 1 NJ 210
 preplace netloc hbm_1_hbm_temp 1 2 1 NJ 190
 preplace netloc hbm_writer_done 1 0 1 NJ 150
-preplace netloc reset_sync_dest_rst_out 1 1 1 680 190n
-preplace netloc sys_clk_1 1 0 2 360 480 680J
-preplace netloc start_copy_stb_1 1 0 1 70J 380n
-preplace netloc host_addr_1 1 0 1 30J 420n
-preplace netloc block_count_1 1 0 1 10J 440n
-preplace netloc copy_to_host_copy_idle 1 0 1 50J 400n
+preplace netloc host_addr_1 1 0 1 NJ 420
+preplace netloc reset_sync_dest_rst_out 1 1 1 400 190n
+preplace netloc start_copy_stb_1 1 0 1 NJ 380
+preplace netloc sys_clk_1 1 0 2 40 240 380J
 preplace netloc axis_in_1 1 0 1 NJ 70
+preplace netloc copy_to_host_HBM_AXI 1 1 1 N 320
+preplace netloc copy_to_host_PCI_AXI 1 0 1 NJ 320
 preplace netloc hbm_refclk_1 1 2 1 NJ 170
 preplace netloc hbm_writer_M_AXI 1 1 1 N 170
-preplace netloc copy_to_host_PCI_AXI 1 0 1 340J 320n
-preplace netloc copy_to_host_HBM_AXI 1 1 1 700 320n
-levelinfo -pg 1 -10 520 880 1040
-pagesize -pg 1 -db -bbox -sgen -230 0 2280 730
+levelinfo -pg 1 0 200 560 720
+pagesize -pg 1 -db -bbox -sgen -220 0 880 490
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-443,-74",
+   "No Loops_TopLeft":"-550,-196",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 preplace port axis_in -pg 1 -lvl 0 -x -10 -y 320 -defaultsOSRD

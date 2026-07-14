@@ -2,7 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "top_level_cmac_tx_cdc_0_0",
-    "cell_name": "ethernet/eth0/cmac_tx_cdc",
+    "cell_name": "ethernet/eth0/tx_mux/cmac_tx_cdc",
     "component_reference": "xilinx.com:module_ref:cmac_tx_cdc:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../project.gen/sources_1/bd/top_level/ip/top_level_cmac_tx_cdc_0_0",

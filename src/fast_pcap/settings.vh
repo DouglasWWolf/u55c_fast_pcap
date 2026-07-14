@@ -13,6 +13,8 @@ localparam STAGE2_FIFO_TYPE  = "ultra";
 localparam STAGE3_FIFO_DEPTH = 4096;
 localparam STAGE3_FIFO_TYPE  = "ultra";
 
+localparam PB_FIFO_DEPTH = 4096;
+localparam PB_FIFO_TYPE  = "ultra";
 
 // The frequency of the clock that serves as a timestamp
 localparam TS_FREQUENCY = 322625265;

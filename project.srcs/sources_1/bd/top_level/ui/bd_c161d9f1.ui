@@ -11,48 +11,56 @@
    "No Loops_Layers":"/ethernet/eth1/cmac_usplus_0_gt_txusrclk2:true|/ethernet/eth0/cmac_usplus_0_gt_txusrclk2:true|/ethernet/eth1/cmac_control_0_rx_resetn_out:true|/ethernet/eth0/cmac_control_0_rx_resetn_out:true|/ethernet/eth0/cmac_control_0_reset_rx_datapath:true|/ethernet/eth1/cmac_control_0_reset_rx_datapath:true|",
    "No Loops_Layout":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
-preplace port qsfp0_gt -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD -left
-preplace port qsfp0_clk -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
-preplace port axis_tx0 -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD
-preplace port axis_rx0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD -left
-preplace port qsfp1_gt -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD -left
-preplace port qsfp1_clk -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD
-preplace port axis_rx1 -pg 1 -lvl 0 -x 0 -y 290 -defaultsOSRD -left
-preplace port axis_tx1 -pg 1 -lvl 0 -x 0 -y 270 -defaultsOSRD
-preplace port s0_axi_stat -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
-preplace port s1_axi_stat -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD
-preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port qsfp0_gt -pg 1 -lvl 0 -x 0 -y 100 -defaultsOSRD -left
+preplace port qsfp0_clk -pg 1 -lvl 0 -x 0 -y 140 -defaultsOSRD
+preplace port axis_tx0 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
+preplace port axis_rx0 -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD -left
+preplace port qsfp1_gt -pg 1 -lvl 0 -x 0 -y 350 -defaultsOSRD -left
+preplace port qsfp1_clk -pg 1 -lvl 0 -x 0 -y 310 -defaultsOSRD
+preplace port axis_rx1 -pg 1 -lvl 0 -x 0 -y 330 -defaultsOSRD -left
+preplace port axis_tx1 -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD
+preplace port s0_axi_stat -pg 1 -lvl 0 -x 0 -y 160 -defaultsOSRD
+preplace port s1_axi_stat -pg 1 -lvl 0 -x 0 -y 370 -defaultsOSRD
+preplace port axis_pb0 -pg 1 -lvl 0 -x 0 -y 80 -defaultsOSRD
+preplace port axis_pb1 -pg 1 -lvl 0 -x 0 -y 410 -defaultsOSRD
+preplace port port-id_sys_clk -pg 1 -lvl 0 -x 0 -y 220 -defaultsOSRD
 preplace port port-id_cmac0_clk -pg 1 -lvl 0 -x 0 -y 180 -defaultsOSRD -left
-preplace port port-id_cmac1_clk -pg 1 -lvl 0 -x 0 -y 390 -defaultsOSRD -left
-preplace portBus qsfp0_leds -pg 1 -lvl 3 -x 860 -y 180 -defaultsOSRD
-preplace portBus qsfp1_leds -pg 1 -lvl 3 -x 860 -y 200 -defaultsOSRD
-preplace portBus link_status -pg 1 -lvl 3 -x 860 -y 220 -defaultsOSRD
-preplace inst eth0 -pg 1 -lvl 1 -x 400 -y 20 -defaultsOSRD -pinDir gt_serial_port left -pinY gt_serial_port 20L -pinDir gt_ref_clk left -pinY gt_ref_clk 40L -pinDir S_AXIS left -pinY S_AXIS 60L -pinDir M_AXIS left -pinY M_AXIS 80L -pinDir s_axi left -pinY s_axi 200L -pinDir sys_clk left -pinY sys_clk 220L -pinDir rx_aligned right -pinY rx_aligned 440R -pinDir cmac_clk left -pinY cmac_clk 240L
-preplace inst eth1 -pg 1 -lvl 1 -x 400 -y 920 -swap {8 1 2 3 4 14 6 7 0 9 10 11 12 13 5 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39} -defaultsOSRD -pinDir gt_serial_port left -pinY gt_serial_port 60L -pinDir gt_ref_clk left -pinY gt_ref_clk 80L -pinDir S_AXIS left -pinY S_AXIS 20L -pinDir M_AXIS left -pinY M_AXIS 40L -pinDir s_axi left -pinY s_axi 240L -pinDir sys_clk left -pinY sys_clk 320L -pinDir rx_aligned right -pinY rx_aligned 260R -pinDir cmac_clk left -pinY cmac_clk 440L
-preplace inst status_leds -pg 1 -lvl 2 -x 695 -y 160 -defaultsOSRD -pinDir link0_up left -pinY link0_up 20L -pinDir link1_up left -pinY link1_up 110L -pinBusDir qsfp0_leds right -pinBusY qsfp0_leds 20R -pinBusDir qsfp1_leds right -pinBusY qsfp1_leds 40R -pinBusDir link_status right -pinBusY link_status 60R
-preplace netloc eth0_cmac_clk 1 0 1 250J 180n
-preplace netloc eth0_rx_aligned 1 1 1 530 180n
-preplace netloc eth1_cmac_clk 1 0 1 20J 390n
-preplace netloc eth1_rx_aligned 1 1 1 550 270n
-preplace netloc status_leds_link_status 1 2 1 NJ 220
-preplace netloc status_leds_qsfp0_leds 1 2 1 NJ 180
-preplace netloc status_leds_qsfp1_leds 1 2 1 NJ 200
-preplace netloc sys_clk_1 1 0 1 190 160n
-preplace netloc S1_AXI_STAT_1 1 0 1 40 350n
-preplace netloc axis_tx0_1 1 0 1 160J 80n
-preplace netloc axis_tx1_1 1 0 1 230J 270n
-preplace netloc cmac_usplus_0_gt_serial_port 1 0 1 20J 40n
-preplace netloc eth0_M_AXIS 1 0 1 180J 100n
-preplace netloc eth1_M_AXIS 1 0 1 210J 290n
-preplace netloc eth1_gt_serial_port 1 0 1 80J 310n
-preplace netloc gt_ref_clk_1 1 0 1 100J 60n
-preplace netloc qsfp1_clk_1 1 0 1 60J 330n
-preplace netloc s_axi_1 1 0 1 270 140n
-levelinfo -pg 1 0 400 695 860
-pagesize -pg 1 -db -bbox -sgen -130 -20 2340 1800
+preplace port port-id_cmac1_clk -pg 1 -lvl 0 -x 0 -y 450 -defaultsOSRD -left
+preplace port port-id_tx0_mux_sel -pg 1 -lvl 0 -x 0 -y 200 -defaultsOSRD
+preplace port port-id_tx1_mux_sel -pg 1 -lvl 0 -x 0 -y 470 -defaultsOSRD
+preplace portBus qsfp0_leds -pg 1 -lvl 3 -x 600 -y 220 -defaultsOSRD
+preplace portBus qsfp1_leds -pg 1 -lvl 3 -x 600 -y 240 -defaultsOSRD
+preplace portBus link_status -pg 1 -lvl 3 -x 600 -y 260 -defaultsOSRD
+preplace inst eth0 -pg 1 -lvl 1 -x 160 -y 40 -swap {8 1 2 3 4 50 6 7 0 9 10 11 12 13 56 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 14 51 52 53 54 55 5 57 58 59 60 61 65 63 62 64} -defaultsOSRD -pinDir gt_serial_port left -pinY gt_serial_port 60L -pinDir gt_ref_clk left -pinY gt_ref_clk 100L -pinDir M_AXIS left -pinY M_AXIS 20L -pinDir s_axi left -pinY s_axi 120L -pinDir axis_tx left -pinY axis_tx 80L -pinDir axis_pb left -pinY axis_pb 40L -pinDir sys_clk left -pinY sys_clk 180L -pinDir rx_aligned right -pinY rx_aligned 180R -pinDir cmac_clk left -pinY cmac_clk 140L -pinDir async_source_select left -pinY async_source_select 160L
+preplace inst eth1 -pg 1 -lvl 1 -x 160 -y 290 -swap {8 1 2 3 4 0 6 7 5 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65} -defaultsOSRD -pinDir gt_serial_port left -pinY gt_serial_port 60L -pinDir gt_ref_clk left -pinY gt_ref_clk 20L -pinDir M_AXIS left -pinY M_AXIS 40L -pinDir s_axi left -pinY s_axi 80L -pinDir axis_tx left -pinY axis_tx 100L -pinDir axis_pb left -pinY axis_pb 120L -pinDir sys_clk left -pinY sys_clk 140L -pinDir rx_aligned right -pinY rx_aligned 20R -pinDir cmac_clk left -pinY cmac_clk 160L -pinDir async_source_select left -pinY async_source_select 180L
+preplace inst status_leds -pg 1 -lvl 2 -x 440 -y 200 -defaultsOSRD -pinDir link0_up left -pinY link0_up 20L -pinDir link1_up left -pinY link1_up 110L -pinBusDir qsfp0_leds right -pinBusY qsfp0_leds 20R -pinBusDir qsfp1_leds right -pinBusY qsfp1_leds 40R -pinBusDir link_status right -pinBusY link_status 60R
+preplace netloc async_source_select_1 1 0 1 NJ 200
+preplace netloc eth0_cmac_clk 1 0 1 NJ 180
+preplace netloc eth0_rx_aligned 1 1 1 N 220
+preplace netloc eth1_cmac_clk 1 0 1 NJ 450
+preplace netloc eth1_rx_aligned 1 1 1 N 310
+preplace netloc status_leds_link_status 1 2 1 NJ 260
+preplace netloc status_leds_qsfp0_leds 1 2 1 NJ 220
+preplace netloc status_leds_qsfp1_leds 1 2 1 NJ 240
+preplace netloc sys_clk_1 1 0 1 20 220n
+preplace netloc source_select1_1 1 0 1 NJ 470
+preplace netloc S1_AXI_STAT_1 1 0 1 NJ 370
+preplace netloc axis_pb0_1 1 0 1 NJ 80
+preplace netloc axis_tx0_1 1 0 1 NJ 120
+preplace netloc axis_tx1_1 1 0 1 NJ 390
+preplace netloc cmac_usplus_0_gt_serial_port 1 0 1 NJ 100
+preplace netloc eth0_M_AXIS 1 0 1 NJ 60
+preplace netloc eth1_M_AXIS 1 0 1 NJ 330
+preplace netloc eth1_gt_serial_port 1 0 1 NJ 350
+preplace netloc gt_ref_clk_1 1 0 1 NJ 140
+preplace netloc qsfp1_clk_1 1 0 1 NJ 310
+preplace netloc s_axi_1 1 0 1 NJ 160
+preplace netloc axis_pb1_1 1 0 1 NJ 410
+levelinfo -pg 1 0 160 440 600
+pagesize -pg 1 -db -bbox -sgen -140 0 760 520
 ",
    "No Loops_ScaleFactor":"1.0",
-   "No Loops_TopLeft":"-574,-220",
+   "No Loops_TopLeft":"-576,-187",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
 #  -string -flagsOSRD
 levelinfo -pg 1 0 10

@@ -1,18 +1,1 @@
-#define REG_ENABLE         0x1000
-#define REG_CAP_COMPLETE   0x1004
-#define REG_PACKET_COUNT   0x1008
-#define REG_BLOCK_COUNT    0x100C
-#define REG_HOST_ADDR_H    0x1010
-#define REG_HOST_ADDR_L    0x1014
-#define REG_HOST_ADDR      0x40000000000001010
-#define REG_COPY_TO_HOST   0x1018
-#define REG_TS_FREQUENCY   0x101C
-
-#define REG_LINK_STATUS    0x1020
-#define REG_SEND           0x1040
-#define REG_SEND_SIZE      0x1044
-#define REG_SEND_COUNT     0x1048
-
-
-
-
+fast_pcap_reg.h
