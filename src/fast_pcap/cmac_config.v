@@ -71,10 +71,25 @@ wire          AMCI_RIDLE;
 //=============================================================================
 // The addresses of the CMAC registers we care about
 //=============================================================================
-localparam CONFIG_TX0 = 32'h1_000C;
-localparam CONFIG_RX0 = 32'h1_0014;
-localparam CONFIG_TX1 = 32'h2_000C;
-localparam CONFIG_RX1 = 32'h2_0014;
+localparam[31:0] CONFIG_RSFEC0 = 32'h1_1000;
+localparam[31:0] ENABLE_RSFEC0 = 32'h1_107C;
+localparam[31:0] CONFIG_RSFEC1 = 32'h2_1000;
+localparam[31:0] ENABLE_RSFEC1 = 32'h2_107C;
+localparam[31:0] CONFIG_TX0    = 32'h1_000C;
+localparam[31:0] CONFIG_RX0    = 32'h1_0014;
+localparam[31:0] CONFIG_TX1    = 32'h2_000C;
+localparam[31:0] CONFIG_RX1    = 32'h2_0014;
+
+wire[63:0] configure[0:8];
+assign configure[0] = {CONFIG_RSFEC0, 32'h3};
+assign configure[1] = {ENABLE_RSFEC0, 32'h3};
+assign configure[2] = {CONFIG_RSFEC1, 32'h3};
+assign configure[3] = {ENABLE_RSFEC1, 32'h3};
+assign configure[4] = {CONFIG_TX0   , 32'h1};
+assign configure[5] = {CONFIG_RX0   , 32'h1};
+assign configure[6] = {CONFIG_TX1   , 32'h1};
+assign configure[7] = {CONFIG_RX1   , 32'h1};
+assign configure[8] = 0;
 //=============================================================================
 
 
@@ -82,8 +97,9 @@ localparam CONFIG_RX1 = 32'h2_0014;
 // After waiting for a startup delay, this state machine sends AX4-Lite
 // transactions that will turn on the CMAC transmitters and receivers
 //=============================================================================
-reg[ 2:0] fsm_state;
+reg       fsm_state;
 reg[31:0] init_delay;
+reg[ 3:0] index;
 //-----------------------------------------------------------------------------
 always @(posedge clk) begin
 
@@ -91,6 +107,7 @@ always @(posedge clk) begin
     AMCI_WRITE <= 0;
 
     if (resetn == 0) begin
+        index      <= 0;
         fsm_state  <= 0;
         init_delay <= 25000000;
     end
@@ -102,35 +119,12 @@ always @(posedge clk) begin
             else
                 fsm_state <= 1;
 
-        1:  if (AMCI_WIDLE) begin
-                AMCI_WADDR <= CONFIG_TX0;
-                AMCI_WDATA <= 1;
+        1:  if (AMCI_WIDLE && configure[index]) begin
+                AMCI_WADDR <= configure[index][63:32];
+                AMCI_WDATA <= configure[index][31:00];
                 AMCI_WRITE <= 1;
-                fsm_state  <= 2;
+                index      <= index + 1;
             end
-
-        2:  if (AMCI_WIDLE) begin
-                AMCI_WADDR <= CONFIG_RX0;
-                AMCI_WDATA <= 1;
-                AMCI_WRITE <= 1;
-                fsm_state  <= 3;
-            end
-
-        3:  if (AMCI_WIDLE) begin
-                AMCI_WADDR <= CONFIG_TX1;
-                AMCI_WDATA <= 1;
-                AMCI_WRITE <= 1;
-                fsm_state  <= 4;
-            end
-
-        4:  if (AMCI_WIDLE) begin
-                AMCI_WADDR <= CONFIG_RX1;
-                AMCI_WDATA <= 1;
-                AMCI_WRITE <= 1;
-                fsm_state  <= 5;
-            end
-
-        5:  fsm_state <= 5;
 
     endcase
 
