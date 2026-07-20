@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x170DF9A915A9785F",
+      "boundary_crc": "0x170DF9A98C424EF7",
       "device": "xcu55c-fsvh2892-2L-e",
       "gen_directory": "../../../../project.gen/sources_1/bd/top_level",
       "name": "top_level",

@@ -79,17 +79,28 @@ localparam[31:0] CONFIG_TX0    = 32'h1_000C;
 localparam[31:0] CONFIG_RX0    = 32'h1_0014;
 localparam[31:0] CONFIG_TX1    = 32'h2_000C;
 localparam[31:0] CONFIG_RX1    = 32'h2_0014;
+localparam[31:0] GT_RESET0     = 32'h1_0000;
+localparam[31:0] GT_RESET1     = 32'h2_0000;
+localparam[31:0] TICK0         = 32'h1_02B0;
+localparam[31:0] TICK1         = 32'h2_02B0;
+localparam[15:0] NO_DELAY      = 0;
 
-wire[63:0] configure[0:8];
-assign configure[0] = {CONFIG_RSFEC0, 32'h3};
-assign configure[1] = {ENABLE_RSFEC0, 32'h3};
-assign configure[2] = {CONFIG_RSFEC1, 32'h3};
-assign configure[3] = {ENABLE_RSFEC1, 32'h3};
-assign configure[4] = {CONFIG_TX0   , 32'h1};
-assign configure[5] = {CONFIG_RX0   , 32'h1};
-assign configure[6] = {CONFIG_TX1   , 32'h1};
-assign configure[7] = {CONFIG_RX1   , 32'h1};
-assign configure[8] = 0;
+wire[79:0] configure[0:14];
+assign configure[ 0] = {NO_DELAY, CONFIG_RSFEC0, 32'h3};
+assign configure[ 1] = {NO_DELAY, ENABLE_RSFEC0, 32'h3};
+assign configure[ 2] = {NO_DELAY, CONFIG_RSFEC1, 32'h3};
+assign configure[ 3] = {NO_DELAY, ENABLE_RSFEC1, 32'h3};
+assign configure[ 4] = {NO_DELAY, CONFIG_TX0   , 32'h1};
+assign configure[ 5] = {NO_DELAY, CONFIG_RX0   , 32'h1};
+assign configure[ 6] = {NO_DELAY, CONFIG_TX1   , 32'h1};
+assign configure[ 7] = {NO_DELAY, CONFIG_RX1   , 32'h1};
+assign configure[ 8] = {NO_DELAY, GT_RESET0    , 32'h1};
+assign configure[ 9] = {16'h1000, GT_RESET1    , 32'h1};
+assign configure[10] = {NO_DELAY, GT_RESET0    , 32'h0};
+assign configure[11] = {16'h1000, GT_RESET1    , 32'h0};
+assign configure[12] = {NO_DELAY, TICK0        , 32'h1};
+assign configure[13] = {NO_DELAY, TICK1        , 32'h1};
+assign configure[14] = 0;
 //=============================================================================
 
 
@@ -97,8 +108,7 @@ assign configure[8] = 0;
 // After waiting for a startup delay, this state machine sends AX4-Lite
 // transactions that will turn on the CMAC transmitters and receivers
 //=============================================================================
-reg       fsm_state;
-reg[31:0] init_delay;
+reg[31:0] delay;
 reg[ 3:0] index;
 //-----------------------------------------------------------------------------
 always @(posedge clk) begin
@@ -106,28 +116,20 @@ always @(posedge clk) begin
     // This strobes high for a single cycle at a time
     AMCI_WRITE <= 0;
 
+    if (delay) delay <= delay - 1;
+   
     if (resetn == 0) begin
         index      <= 0;
-        fsm_state  <= 0;
-        init_delay <= 25000000;
+        delay      <= 25000000;
     end
 
-    else case (fsm_state)
-        
-        0:  if (init_delay)
-                init_delay <= init_delay - 1;
-            else
-                fsm_state <= 1;
-
-        1:  if (AMCI_WIDLE && configure[index]) begin
-                AMCI_WADDR <= configure[index][63:32];
-                AMCI_WDATA <= configure[index][31:00];
-                AMCI_WRITE <= 1;
-                index      <= index + 1;
-            end
-
-    endcase
-
+    else if (delay == 0 && AMCI_WIDLE && configure[index]) begin
+        AMCI_WADDR <= configure[index][63:32];
+        AMCI_WDATA <= configure[index][31:00];
+        delay      <= configure[index][79:64];
+        AMCI_WRITE <= 1;
+        index      <= index + 1;
+    end
 end
 //=============================================================================
 
